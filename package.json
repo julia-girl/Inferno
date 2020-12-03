@@ -1,0 +1,20 @@
+{
+  "name": "inferno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@enitoni/gears": "^4.0.2",
+    "@enitoni/gears-discordjs": "^4.0.0",
+    "discord.js": "^12.5.1"    
+  },
+  "devDependencies": {
+    "typescript": "^4.1.2",
+    "ts-node-dev": "^1.0.0"
+  },
+  "scripts": {
+    "start": "ts-node-dev src/main.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
