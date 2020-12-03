@@ -4,6 +4,6 @@ import { chooseCommand } from "./choose"
 import { cumCommand } from "./cum"
 import { redditGoldCommand } from "./redditGold"
 
-export const funCommandGroup = new CommandGroup()
+export const funGroup = new CommandGroup()
   .match(matchAlways())
   .setCommands(cumCommand, redditGoldCommand, chooseCommand)

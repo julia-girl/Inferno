@@ -1,6 +1,7 @@
 import { matchPrefixes } from "@enitoni/gears"
 import { Bot, Adapter, CommandGroup } from "@enitoni/gears-discordjs"
-import { funCommandGroup } from "./commands/fun/funGroup"
+import { funGroup } from "./commands/fun/funGroup"
+import { otherGroup } from "./commands/other/otherGroup"
 
 import { token } from "./config.json"
 
@@ -8,7 +9,7 @@ const adapter = new Adapter({ token })
 
 const prefixGroup = new CommandGroup()
   .match(matchPrefixes("!"))
-  .setCommands(funCommandGroup)
+  .setCommands(funGroup, otherGroup)
 
 const bot = new Bot({ adapter, commands: [prefixGroup] })
 
