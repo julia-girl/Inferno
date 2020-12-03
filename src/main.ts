@@ -2,7 +2,7 @@ import { matchPrefixes } from "@enitoni/gears"
 import { Bot, Adapter, CommandGroup } from "@enitoni/gears-discordjs"
 import { funCommandGroup } from "./commands/fun/funGroup"
 
-import { token } from "../config.json"
+import { token } from "./config.json"
 
 const adapter = new Adapter({ token })
 
@@ -12,7 +12,21 @@ const prefixGroup = new CommandGroup()
 
 const bot = new Bot({ adapter, commands: [prefixGroup] })
 
-bot
-  .start()
-  .then(() => console.log("Connected!"))
-  .catch((e) => console.error(e))
+process.on("SIGTERM", () => {
+  console.log("Recieved SIGTERM")
+  bot.client.destroy()
+})
+
+process.on("SIGINT", () => {
+  console.log("Recieved SIGINT")
+  bot.client.destroy()
+})
+
+async function main() {
+  await bot.start()
+
+  console.log("Connected")
+  bot.client.user?.setActivity("hentai", { type: "WATCHING" })
+}
+
+main()
