@@ -3,6 +3,10 @@
       "module": "commonjs",
       "strict": true,
       "resolveJsonModule": true,
+
+      "rootDir": "src/",
+      "outDir": "build/",
+
       "lib": ["ES2015", "DOM"]
     }
 }
