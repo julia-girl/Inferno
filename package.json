@@ -17,6 +17,7 @@
   "scripts": {
     "start-dev": "ts-node-dev src/main.ts",
     "compile": "tsc",
+    "build": "tsc",
     "start": "node build/main.js"
   },
   "author": "",
