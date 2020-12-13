@@ -15,7 +15,7 @@
     "ts-node-dev": "^1.0.0"
   },
   "scripts": {
-    "start-dev": "ts-node-dev src/main.ts",
+    "dev": "ts-node-dev src/main.ts",
     "compile": "tsc",
     "build": "tsc",
     "start": "node build/main.js"
