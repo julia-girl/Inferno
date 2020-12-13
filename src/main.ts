@@ -1,5 +1,6 @@
 import { matchPrefixes } from "@enitoni/gears"
 import { Bot, Adapter, CommandGroup } from "@enitoni/gears-discordjs"
+import { cursedGroup } from "./commands/cursed/cursedGroup"
 import { funGroup } from "./commands/fun/funGroup"
 import { otherGroup } from "./commands/other/otherGroup"
 
@@ -9,9 +10,12 @@ const adapter = new Adapter({ token })
 
 const prefixGroup = new CommandGroup()
   .match(matchPrefixes("!"))
-  .setCommands(funGroup, otherGroup)
+  .setCommands(funGroup, otherGroup, cursedGroup)
 
-const bot = new Bot({ adapter, commands: [prefixGroup] })
+const bot = new Bot({
+  adapter,
+  commands: [prefixGroup],
+})
 
 process.on("SIGTERM", () => {
   console.log("Recieved SIGTERM")
